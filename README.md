@@ -1,0 +1,1 @@
+Nombre proyecto: LucreacionesDesing&Code Descripcion: creacion de una pagina web de un emprendimiento, donde se comienza con la estrucutra basica de html, para organizar contenido y a su vez dejarla lista para futuras mejoras y/o agregado de lebguaje CSS y/o JS.
