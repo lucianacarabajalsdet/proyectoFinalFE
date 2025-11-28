@@ -1,11 +1,10 @@
-import { productos } from "./productos.js";
+//import { productos } from "./productos.js";
 import { agregarAlCarrito } from "./funcionesCarrito.js";
 import { obtenerCarrito } from "./storage.js";
 import { actualizarContador } from "./ui.js";
 
-//El evento "DOMContentLoaded" sirve para que no intentemos acceder a un nodo HTML con el
-//  codigo js antes de que el navegador lo cree:
-//Por ejemplo: que no lea un getElementById cuando aun no existe ese id.
+//El evento "DOMContentLoaded" sirve para que no intentemos acceder a un nodo HTML con el  codigo js antes de que el navegador lo cree://Por ejemplo: que no lea un getElementById cuando aun no existe ese id.
+ 
 document.addEventListener("DOMContentLoaded", () => {
   //Accedemos al contenedor donde queremos generar los articles
   const contenedor = document.getElementById("contenedor-tarjetas");
@@ -14,7 +13,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const carrito = obtenerCarrito();
   actualizarContador(carrito);
 
-  productos.forEach((producto) => {
+
+  fetch("./data/productos.json")
+  .then((res) =>{   // control de status 
+    if (!res.ok) {
+      throw new Error(`Error HTTP status: ${res.status}`);
+  }
+    return res.json()  // se transforma datos si esta ok
+  })
+
+  .then((dataProducto)=>{   // reemplazo el foreach desde el js para usar desde el json
+    dataProducto.forEach((producto) => {
     // creamos los articles y sus contenidos
     const tarjeta = document.createElement("article");
     tarjeta.classList.add("tarjeta-producto");
@@ -44,5 +53,13 @@ document.addEventListener("DOMContentLoaded", () => {
     tarjeta.appendChild(boton);
 
     contenedor.appendChild(tarjeta);
+
   });
+
+})
+
+   .catch((err)=>{
+    console.log(err);
+   });
+
 });

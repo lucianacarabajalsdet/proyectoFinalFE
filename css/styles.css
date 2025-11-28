@@ -36,6 +36,7 @@ body {
   align-items: center;
 }
 
+
 .header__logo {
   padding: 1rem;
   margin-left: 2rem;
@@ -47,6 +48,12 @@ body {
   color: #ECF0F1;
   text-decoration: none;
 }
+
+.logo-img {
+    height: 80px;  
+    width: auto; 
+}
+
 
 .header__nav {
   padding: 1rem;
@@ -72,30 +79,49 @@ body {
   padding: 1rem;
 }
 
-.footer {
-  background-color: #2C3E50;
-  color: #ECF0F1;
+/* -------------------------------------------------------------------------- */
+/*                                 FOOTER                                     */
+/* -------------------------------------------------------------------------- */
 
-  padding: 2rem;
-  
 
-  /* hago flexibles al p y la nav */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* Estilos para el pie de página (footer) */
+footer {
+    /* 1. Color de Fondo y Fuente */
+    background-color: #2C3E50; /* Color oscuro o el que prefieras */
+    color: #ECF0F1; /* Letra blanca */
+
+    /* 2. Centrado del Contenido */
+    text-align: center; /* Centra el texto dentro del footer */
+
+    /* 3. Padding (Espacio interno) para que no se vea pegado */
+    padding: 30px 0;
+    
+    /* 4. Asegurar que ocupe todo el ancho */
+    width: 100%; 
+
+    margin-top: 50px;
 }
 
-.footer nav ul {
-  list-style: none;
+/* Estilos para los enlaces dentro del footer (redes sociales, etc.) */
+footer a {
+    color: white; /* Para que los enlaces también sean blancos */
+    text-decoration: none; /* Opcional: Quita el subrayado de los enlaces */
+    margin: 0 30px; /* Separa los enlaces entre sí */
+}
 
-  /* hago flexibles a los li de la lista */
-  display: flex;
-  justify-content: center;
-  gap: 2rem; /* 20px */
+/* Opcional: Estilo para la línea de derechos de autor si usaste un <p> */
+footer p {
+    margin: 5px 0; /* Un poco de espacio vertical para el texto */
+}
+
+/* Opcional: Estilos para el contenedor de redes si lo agregaste */
+.redes-sociales {
+    margin-bottom: 10px;
+    margin-top: 15px;
 }
 
 /* -------------------------------------------------------------------------- */
-/*                              👉Nuevo: BOTONES                              */
+/*                              BOTONES                                       */
 /* -------------------------------------------------------------------------- */
 .btn {
   background-color: #69c187;;
@@ -126,6 +152,8 @@ body {
    background-color: #e0aa24;
   
 }
+
+
 /* -------------------------------------------------------------------------- */
 /*                                    HOME                                    */
 /* -------------------------------------------------------------------------- */
@@ -212,7 +240,7 @@ main .parrafo-home {
 }
 
 /* -------------------------------------------------------------------------- */
-/*                                  Contacto                                  */
+/*                                  CONTACTO                                  */
 /* -------------------------------------------------------------------------- */
 
 .seccion-contacto {
@@ -269,7 +297,7 @@ main .parrafo-home {
 }
 
 /* -------------------------------------------------------------------------- */
-/*                              👉Nuevo: Carrito                              */
+/*                              CARRITO                                       */
 /* -------------------------------------------------------------------------- */
 .mensaje-carrito-vacio {
   font-size: 2.5rem;
@@ -281,7 +309,7 @@ main .parrafo-home {
 }
 
 /* -------------------------------------------------------------------------- */
-/*                                media queries                               */
+/*                                M QUERIES                                   */
 /* -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
   .header {
